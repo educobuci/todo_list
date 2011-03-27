@@ -1,4 +1,13 @@
 TodoList::Application.routes.draw do
+
+  devise_for :users do
+   #get 'users', :to => 'home#hello', :as => :user_root
+  end
+
+  root :to => 'home#index'
+  
+  match ':controller(/:action(/:id(.:format)))'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

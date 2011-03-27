@@ -3,11 +3,13 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.5'
 gem 'sqlite3'
 gem 'responders'
+gem 'devise'
 gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.5.0'
-  gem 'capybara', '~> 0.4.1'
+  gem 'capybara', :git => "git://github.com/jnicklas/capybara.git"
 end
 
 # Use unicorn as the web server
