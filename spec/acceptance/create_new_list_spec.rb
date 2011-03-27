@@ -13,6 +13,8 @@ feature 'Create new list' do
     end
     click_link_or_button 'Create'
     page.should have_content('The list has been created successfully')
-    @user.lists[0].name.should be=='work tasks'
+    
+    visit user_root_url
+    page.should have_content('work tasks')
   end
 end
