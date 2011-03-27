@@ -1,7 +1,4 @@
 <div id="index">
   <%= link_to 'Sign Up', new_user_registration_path, :class => 'signup'  %> or
   <%= link_to 'Sign In', new_user_session_path, :class => 'signin' %>
-  <% if user_signed_in? && current_user.avatar %>
-    <%= image_tag current_user.avatar.to_s %>
-  <% end %>
 </div>

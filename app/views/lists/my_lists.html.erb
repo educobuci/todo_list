@@ -1,0 +1,9 @@
+<div id="my_lists">
+  <div><%= image_tag @user.avatar.to_s %></div>
+  <%= link_to 'Create new list',  new_list_url %>
+  <% @user.lists.each do |list| %>
+    <ul>
+      <li><%= list.name %></li>
+    </ul>    
+  <% end %>
+</div>

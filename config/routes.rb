@@ -1,8 +1,10 @@
 TodoList::Application.routes.draw do
 
   devise_for :users do
-   #get 'users', :to => 'home#hello', :as => :user_root
+   get 'my_lists', :to => 'lists#my_lists', :as => :user_root
   end
+  
+  resources :lists
 
   root :to => 'home#index'
   

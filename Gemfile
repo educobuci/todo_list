@@ -10,6 +10,7 @@ gem 'rmagick'
 group :development, :test do
   gem 'rspec-rails', '~> 2.5.0'
   gem 'capybara', :git => "git://github.com/jnicklas/capybara.git"
+  gem 'ZenTest'
 end
 
 # Use unicorn as the web server
