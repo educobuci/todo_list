@@ -6,6 +6,7 @@ gem 'responders'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'jquery-rails', '>= 0.2.6'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.5.0'
