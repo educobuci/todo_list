@@ -2,10 +2,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar, :name
   
-  validates_presence_of :avatar
-  validates_presence_of :name
+  validates :name, :avatar, :presence => true
   
   mount_uploader :avatar, AvatarUploader
   
