@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
   
   validates_presence_of :avatar
+  validates_presence_of :name
   
   mount_uploader :avatar, AvatarUploader
   

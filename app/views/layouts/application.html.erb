@@ -7,6 +7,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="menu">
+    <ul>
+      <li><%= link_to 'sign out', destroy_user_session_path %></li>
+      <li><%= link_to 'edit profile', edit_user_registration_path %></li>
+    </ul>
+  </div>
   <div id="flash">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
