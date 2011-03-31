@@ -12,8 +12,12 @@
     </div>
   <% end %>
   
-  <p><%= f.label :name, "Name" %><br />
-  <%= f.text_field :name %></p>
+  <p>
+    <%= f.label :name, "Name" %><br />
+    <%= f.text_field :name %>
+    <%= f.check_box :public %>
+    <%= f.label :public, :title => 'Allows other users to follow this list' %>
+  </p>
   
   <span>Items</span>
   <%= f.fields_for :items do |item_form| %>

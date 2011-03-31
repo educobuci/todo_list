@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar, :name
   
-  validates :name, :avatar, :presence => true
+  validates :name, :presence => true
   
   mount_uploader :avatar, AvatarUploader
   

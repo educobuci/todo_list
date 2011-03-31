@@ -38,4 +38,12 @@ class ListsController < ApplicationController
       end
     end
   end
+  
+  def index
+    @lists = List.publics.excluding_user(current_user)
+  end
+  
+  def show
+    @list = List.find(params[:id])
+  end
 end

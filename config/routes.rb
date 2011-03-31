@@ -1,8 +1,6 @@
 TodoList::Application.routes.draw do
 
-  resources :lists do
-    #resources :items
-  end
+  resources :lists
   
   #match 'user/:id/lists/' => 'lists#user', :as => :user_lists
   

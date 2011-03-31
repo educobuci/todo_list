@@ -13,6 +13,7 @@ group :development, :test do
   gem 'capybara', :git => "git://github.com/jnicklas/capybara.git"
   gem 'ZenTest'
   gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server
