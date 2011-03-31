@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_filter :check_ownership, :only => [:edit, :update]
   respond_to :html
   
   def my_lists
@@ -45,5 +46,12 @@ class ListsController < ApplicationController
   
   def show
     @list = List.find(params[:id])
+  end
+  
+  private
+  def check_ownership
+    if List.find(params[:id]).user_id != current_user.id
+      redirect_to user_root_url, :alert => 'Access denied'
+    end
   end
 end
