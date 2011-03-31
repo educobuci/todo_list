@@ -1,12 +1,12 @@
 require 'acceptance/acceptance_helper'
 
-feature 'Create new list' do
+feature 'Create a new list' do
   background do
-    create_new_user
-    @user = User.first
+    @user = Factory.create(:user)
+    sign_in_as @user
   end
   
-  scenario 'Regular list creation' do
+  scenario 'List and item creation' do
     click_link 'Create new list'
     within('#new_list') do
       fill_in 'Name', :with => 'work tasks'

@@ -1,23 +1,23 @@
 require 'acceptance/acceptance_helper'
 
-feature 'Browse the public lists' do
+feature 'Public lists' do
   background do
-    create_new_user
-    @current_user = User.first
-    @current_user.lists<<Factory.create(:home_work)
-    @other_user = Factory.create(:user)
+    @user = Factory.create(:user)
+    @signed_user = Factory.create(:some_user)
+
+    sign_in_as @signed_user
     
     visit user_root_url
     click_link 'Browse the public lists'
   end
   
-  scenario 'Simple browsing' do
+  scenario 'Showing the public lists' do
     page.should have_content('some public list')
     page.should_not have_content('some private list')
     page.should_not have_content('home work')
   end
   
-  scenario 'Accessing a public list' do
+  scenario 'Showing a public list details' do
     click_link 'some public list'
     page.should have_content('some item')
   end  
