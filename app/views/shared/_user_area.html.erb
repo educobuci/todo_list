@@ -1,0 +1,12 @@
+<div id="user">
+  <div id="user_avatar">
+    <%= image_tag @user.avatar.to_s unless @user.avatar.blank? %>
+  </div>
+  <div id="user_menu">
+    <span><%= @user.name %></span>
+    <ul>
+      <li><%= link_to 'sign out', destroy_user_session_path %></li> | 
+      <li><%= link_to 'edit profile', edit_user_registration_path %></li>
+    </ul>
+  </div>
+</div>

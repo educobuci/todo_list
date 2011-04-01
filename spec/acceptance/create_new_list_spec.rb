@@ -7,7 +7,7 @@ feature 'Create a new list' do
   end
   
   scenario 'List and item creation' do
-    click_link 'Create new list'
+    click_link 'create a new list'
     within('#new_list') do
       fill_in 'Name', :with => 'work tasks'
       fill_in 'list_items_attributes_0_name', :with => 'dummy item'

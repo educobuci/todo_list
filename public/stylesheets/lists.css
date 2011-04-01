@@ -1,0 +1,199 @@
+/****************************************************
+/* Common
+/***************************************************/
+* { vertical-align: baseline; font-weight: inherit; font-family: inherit; font-style: inherit; font-size: 100%; border: 0; padding: 0; margin: 0; }
+body
+{ 
+  font-family: Arial;
+  margin:20px;
+  color:#767676;
+}
+a { text-decoration: none; color: #2B82D2; }
+a:hover { text-decoration: underline }
+h1
+{
+  background: #2B82D2;
+  color:white;
+  display:inline;
+  padding:5px 10px;
+  font-size:25px;
+  font-weight: bold;
+  position:absolute;
+}
+h2
+{
+  font-size:55px;
+  border-bottom:solid 1px #E0E0E0;
+  color:#C9C9C9;
+  margin:20px 0;
+}
+a.button, input[type=submit]
+{
+  display:inline;
+  background:#2B82D2;
+  padding:3px 5px;
+  color:white;
+}
+a.button { padding:5px 7px; }
+a.button:hover, input[type=submit]:hover
+{
+  text-decoration:none;
+  background:#22AAFF;
+}
+
+/****************************************************
+/* Home
+/***************************************************/
+#index
+{
+  margin-top:100px;
+  text-align:center;
+  font-size:30px;
+}
+/****************************************************
+/* Flash
+/***************************************************/
+div.flash
+{
+  text-align:center;
+  color:white;
+  position:absolute;
+  width:400px;
+  left:50%;
+  margin-left:-200px;
+  overflow:hidden;
+  z-index:10;
+  background:#88CC44;
+}
+div.alert
+{
+  background:red;
+}
+
+/****************************************************
+/* Main menu
+/***************************************************/
+#menu
+{
+  padding-left:150px;
+  height:50px;
+  border-bottom:solid 1px #E0E0E0;
+}
+#menu ul { padding-top: 15px;}
+#menu ul li
+{  
+  display:inline;
+  margin-right:30px;
+}
+#menu a
+{
+  color:#A8A8A8;
+  font-size:22px;
+  text-decoration:none;
+}
+#menu a:hover
+{
+  color:#2B82D2;
+}
+
+/****************************************************
+/* User
+/***************************************************/
+#user
+{
+  position:absolute;
+  right:30px;
+  top:20px;
+}
+#user ul
+{
+  color:#767676;
+}
+#user ul li
+{
+  display:inline;
+  font-size:12px;
+  font-weight:bold;
+}
+#user_avatar
+{
+  float:left;
+}
+#user_avatar img
+{
+  width:40px;
+  height:40px;
+}
+#user_menu
+{
+  float:right;
+  padding-left:10px;
+}
+
+/****************************************************
+/* My lists
+/***************************************************/
+span.new_list
+{
+  position:absolute;
+  margin-top:-45px;
+  margin-left:220px;
+}
+
+#actual_lists ul
+{
+  margin-top:20px;
+  margin-left:40px;
+  margin-bottom:20px;
+}
+#actual_lists ul li
+{
+  margin-top:10px;
+}
+
+#feed
+{
+  width:250px; 
+  position:absolute;
+  top:135px;
+  right:20px;
+  border-left:solid 20px white;
+}
+#feed div
+{
+  background:#ECECEC;
+  padding:10px 0 10px 10px;
+}
+#feed ul
+{
+  margin-left:20px;
+  margin-bottom:20px;
+}
+
+/****************************************************
+/* Form
+/***************************************************/
+input[type=text], input[type=email], input[type=password]
+{
+  border:solid 1px #EBEBEB;
+  margin-bottom:10px;
+}
+.form_buttons
+{
+  margin-top:30px;
+}
+#devise_links
+{
+  margin-top:20px;
+}
+/****************************************************
+/* Errors
+/***************************************************/
+#error_explanation
+{
+  color:red;
+}
+#error_explanation ul
+{
+  margin:10px 30px;
+}

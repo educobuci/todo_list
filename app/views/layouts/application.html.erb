@@ -7,17 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="menu">
-    <ul>
-      <li><%= link_to 'sign out', destroy_user_session_path %></li>
-      <li><%= link_to 'edit profile', edit_user_registration_path %></li>
-    </ul>
+  <div class="flash notice"><%= notice %></div>
+  <div class="flash alert"><%= alert %></div>
+  <div id="structure">    
+    <a href="/"><h1>to.do</h1></a>
+    <div id="menu"></div>
+    <%= (render :partial => 'shared/user_area') if user_signed_in? %>
+    <div id="content">
+      <%= yield %>
+    </div>
   </div>
-  <div id="flash">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </div>
-
-  <%= yield %>
 </body>
 </html>

@@ -1,17 +1,16 @@
-<%= form_for @list do |f| %>
-  
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this author from being saved:</h2>
+<% if @list.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@list.errors.count, "error") %> prohibited this author from being saved:</h3>
 
-      <ul>
-      <% @list.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
+    <ul>
+    <% @list.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @list do |f| %>  
   <p>
     <%= f.label :name, "Name" %><br />
     <%= f.text_field :name %>
@@ -19,17 +18,18 @@
     <%= f.label :public, :title => 'Allows other users to follow this list' %>
   </p>
   
-  <span>Items</span>
-  <%= f.fields_for :items do |item_form| %>
-    <%= render 'item_fields', :f => item_form %>
-  <% end %>
-  
-  <div>
+  <div id="items">
+    <span>Items</span>
+    <%= f.fields_for :items do |item_form| %>
+      <%= render 'item_fields', :f => item_form %>
+    <% end %>
+    
     <%= link_to_add_fields 'Add new item', f, :items %>
   </div>
   
+  
   <div class="form_buttons">
-    <%= f.submit %> or <%= link_to 'Cancel', user_root_url %>
+    <%= f.submit %> or <%= link_to 'Cancel', user_root_url, :class => 'button' %>
   </p>
   
 <% end %>

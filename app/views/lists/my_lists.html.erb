@@ -1,18 +1,28 @@
 <div id="my_lists">
-  <div><%= image_tag @user.avatar.to_s unless @user.avatar.blank? %></div>
-  <%= link_to 'Create new list',  new_list_url %>
-  <% @user.lists.each do |list| %>
-    <ul>
-      <li><%= link_to list.name, edit_list_path(list) %></li>
-    </ul>    
-  <% end %>
-</div>
-<div id="feed">
-  <%= link_to 'Browse the public lists', lists_path  %>
   
-  <% @user.following.each do |l| %>
-  <div class="following">
-    <%= link_to "#{l.name}", list_path(l) %>
+  <h2>my lists</h2>
+  <span class="new_list"><%= link_to 'create a new list',  new_list_url %></span>
+  
+  <div id="actual_lists">
+    <ul>
+      <% @user.lists.each do |list| %>
+        <li><%= link_to list.name, edit_list_path(list) %></li>
+      <% end %>
+    </ul>
   </div>
-  <% end %>
+</div>
+
+<div id="feed">
+  <span>following lists</span>
+  <div class="following">    
+    <% if @user.following.size > 0 %>
+    <ul>
+      <% @user.following.each do |l| %>
+        <li><%= link_to "#{l.name}", list_path(l) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    
+    <span><%= link_to 'Browse the public lists', lists_path  %></span>
+  </div>
 </div>
