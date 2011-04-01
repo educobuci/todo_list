@@ -14,6 +14,7 @@ group :development, :test do
   gem 'ZenTest'
   gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'autotest-growl'
 end
 
 # Use unicorn as the web server
