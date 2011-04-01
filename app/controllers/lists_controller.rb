@@ -1,7 +1,15 @@
 class ListsController < ApplicationController
-  before_filter :check_ownership, :only => [:edit, :update]
+  before_filter :check_ownership, :only => [:edit, :update, :destroy]
   respond_to :html
   
+  def index
+    @lists = List.publics.excluding_user(current_user)
+  end
+  
+  def show
+    @list = List.find(params[:id])
+  end
+    
   def my_lists
     @user = current_user
   end
@@ -40,12 +48,9 @@ class ListsController < ApplicationController
     end
   end
   
-  def index
-    @lists = List.publics.excluding_user(current_user)
-  end
-  
-  def show
+  def destroy
     @list = List.find(params[:id])
+    head :ok
   end
   
   private

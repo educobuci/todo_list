@@ -169,7 +169,20 @@ ul.list li
   margin-left:20px;
   margin-bottom:20px;
 }
-
+a.delete_button
+{
+  font-size:11px;
+  display:inline;
+  background:#DD0000;
+  padding:2px 5px;
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+a.delete_button:hover
+{
+  background:#FF2222;
+}
 /****************************************************
 /* Form
 /***************************************************/
