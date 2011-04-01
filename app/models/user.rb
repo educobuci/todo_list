@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   has_many :lists
+  has_and_belongs_to_many :following, :class_name => 'List'
 end

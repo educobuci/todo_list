@@ -21,4 +21,21 @@ feature 'Public lists' do
     click_link 'some public list'
     page.should have_content('some item')
   end  
+  
+  scenario 'Following another user list' do
+    click_link 'some public list'
+    click_link 'follow this list'
+    page.should have_content 'You are now following "some public list"'
+  end
+  
+  scenario 'Unfollowing a list' do
+    click_link 'some public list'
+    click_link 'follow this list'
+
+    visit user_root_url
+
+    click_link 'some public list'
+    click_link 'unfollow this list'
+    page.should have_content 'You are not anymore following "some public list"'
+  end
 end

@@ -1,11 +1,16 @@
 <div id="show_list">
-  <%= @list.name %>
+  <div>
+    <%= @list.name %>
+    <% if current_user.following.exists? @list %>
+    <span><%= link_to 'unfollow this list', unfollow_list_url(:id => @list.id) %></span>
+    <% else %>
+    <span><%= link_to 'follow this list', follow_list_url(:id => @list.id) %></span>
+    <% end %>
+  </div>
   
   <ul>
     <% @list.items.each do |item| %>
-      <% if item.persisted?  %>
       <li><%= item.name %></li>
-      <% end %>
     <% end %>
   </ul>
 </div>

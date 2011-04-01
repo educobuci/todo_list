@@ -9,4 +9,10 @@
 </div>
 <div id="feed">
   <%= link_to 'Browse the public lists', lists_path  %>
+  
+  <% @user.following.each do |l| %>
+  <div class="following">
+    <%= link_to "#{l.name}", list_path(l) %>
+  </div>
+  <% end %>
 </div>
