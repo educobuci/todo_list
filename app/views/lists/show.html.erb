@@ -1,6 +1,6 @@
 <div id="show_list">
   <div>
-    <%= @list.name %>
+    <h2><%= @list.name %></h2>
     <% if current_user.following.exists? @list %>
     <span><%= link_to 'unfollow this list', unfollow_list_url(:id => @list.id) %></span>
     <% else %>
@@ -8,7 +8,7 @@
     <% end %>
   </div>
   
-  <ul>
+  <ul class="list">
     <% @list.items.each do |item| %>
       <li><%= item.name %></li>
     <% end %>

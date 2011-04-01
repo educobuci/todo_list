@@ -20,12 +20,11 @@
 
   <p><%= f.label :avatar, "Your avatar" %><br />
   <%= f.file_field :avatar %></p>
-  
-  <p><%= f.submit "Update" %></p>
+  <br /><br />
+  <p><%= f.submit "Update" %> or <%= link_to "Cancel", user_root_url, :class => 'button' %></p>
 <% end %>
 
 <!--h3>Cancel my account</h3-->
 
 <!--p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p-->
 
-<%= link_to "Cancel", user_root_url %>
